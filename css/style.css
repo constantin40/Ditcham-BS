@@ -1,0 +1,249 @@
+/* TOC
+0.0 Temporary
+0.1 Typography
+0.2 Colors
+0.3 Layout
+0.4 General classes
+1.0 HEADER
+  1.1 NAVBAR 
+2.  HOME PAGE
+2.1 HERO IMAGE 
+2.2 SLIDER
+2 Home Section Welcome
+*/
+
+/* 0.0 Temporary stuff  */ 
+::-webkit-scrollbar {
+  display: none;
+  }
+
+
+/* 0.1 Typography */
+h2, h3, h4 {
+  font-family: "PT Serif";
+}
+p {
+  font-family: "Heebo";
+}
+
+/* 0.2 Colors */
+:root {
+  --col-green: #006545;
+  --col-beige:  #E7BA6F;
+}
+
+/* 0.4 General Classes  */
+
+/* 1.1 NAVBAR */
+header {
+  position: fixed;
+  width: 100%;
+  // set animation
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+header.sticky {
+  height: 70px;
+  background: var(--col-green);
+  text-align: left; 
+}
+
+.navbar-toggler {
+  margin-top: 15px;
+}
+
+@media screen and (min-width: 992px) {
+  .navbar {
+    height: 130px;
+  }
+  .navbar-light .navbar-nav .nav-link {
+    padding-right: 75px;
+  }
+  #nav-left {
+    padding-left: 30px;
+  }
+}
+
+.nav-icon {
+  width: 42px;
+  height: 42px;
+    border: 1px solid var(--col-beige);
+    border-radius: 50%;
+    font-size: 12px;
+    display: flex;
+    
+  align-items: center;
+  justify-content: center;
+}
+
+/* 1.1a MENU NEW  */
+
+.main-menu {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+}
+.nav-open .main-menu {
+  opacity: 1;
+  visibility: visible;
+  background: rgba(0, 0, 0, 0.92);
+}
+.main-menu .nav li a {
+  color: #fff;
+  font-size: 5vh;
+  font-weight: 600;
+}
+.main-menu .nav li {
+  opacity: 0;
+  -webkit-transform: translateY(-40px);
+  transform: translateY(-40px); 
+  animation-timing-function: cubic-bezier(0.45, 0.005, 0, 1);
+}
+.nav-open .main-menu .nav li {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+  transform: translateY(0px);
+  -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+  transition: transform 0.2s, opacity 0.2s;
+} 
+
+.nav-button {
+  position: relative;
+  z-index: 1111;
+  border: solid 1px #f8f8f8;
+  height: 42px;
+  display: block;
+  width: 50px;
+  padding: 12px;
+}
+.nav-button #nav-icon3 {
+  width: 24px;
+  height: 22px;
+  display: inline-block;
+  position: relative; 
+  transform: rotate(0deg); 
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+.nav-button #nav-icon3 span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0; 
+  transform: rotate(0deg); 
+  transition: 0.25s ease-in-out;
+}
+.nav-button #nav-icon3 span:nth-child(1) {
+  top: 0;
+}
+.nav-button #nav-icon3 span:nth-child(2),
+#nav-icon3 span:nth-child(3) {
+  top: 7px;
+}
+.nav-button #nav-icon3 span:nth-child(4) {
+  top: 14px;
+}
+.nav-open #nav-icon3 span:nth-child(1) {
+  top: 9px;
+  width: 0;
+  left: 50%;
+}
+.nav-open #nav-icon3 span:nth-child(2) { 
+  transform: rotate(45deg);
+}
+.nav-open #nav-icon3 span:nth-child(3) { 
+  transform: rotate(-45deg);
+}
+.nav-open #nav-icon3 span:nth-child(4) {
+  top: 9px;
+  width: 0;
+  left: 50%;
+}
+
+.flex-center { 
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  height: 100%;
+}
+
+/* 1.2 Header Logo */
+#logo-image {
+  width: 54px;
+  height: 59px;
+  background: url("../img/logo-small-white.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.logo-subtitle img {
+  opacity: 1;
+}
+nav.sticky #logo-image {
+  background: url("../img/logo-small.png");
+  width: 54px;
+  height: 59px;
+}
+@media screen and (min-width: 992px) {
+  #logo-img {
+    width: 260px;
+    height: 120px;
+    position: relative;
+    bottom: -20px;
+  }
+  nav.sticky .logo-subtitle img {
+    height: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+}
+/* 2. HOME PAGE */
+
+/* 2.1 Hero Image  */
+.home-section__hero-image {
+  background-image: url("../img/home-top-hero.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 50vw;
+}
+.home__hero-fade {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  min-height: 200px;
+}
+
+/* 2. Home Top Features */
+.home-section__categories-top {
+  position: relative;
+  margin-top: -120px;
+}
+
+/* 2.2 SLIDER  */
+
+
+.slider-home-top { 
+  max-height: 420px;
+  width: 100%;
+  box-sizing: border-box 
+}
+.slider-home-top img {
+  max-width: 100%;
+  max-height: 100%;
+}
+ /* 2 Home Section Welcome */
+
+ .home-section__welcome {
+   background-color: gray;
+   background-image: url('../img/home-section-2-bg.jpg');
+   background-size: cover;
+   background-position: center center;
+ }

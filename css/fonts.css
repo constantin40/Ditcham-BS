@@ -1,0 +1,15 @@
+
+/* latin */
+@font-face {
+  font-family: 'Heebo';
+  font-style: normal;
+  font-weight: 400; 
+  src: local('Heebo'), local('Heebo-Regular'), url(../fonts/Heebo-Regular.woff2) format('woff2'); 
+}
+/* latin-ext */
+@font-face {
+  font-family: 'PT Serif';
+  font-style: normal;
+  font-weight: 400; 
+  src: local('PT Serif'), local('PTSerif-Regular'), url(../fonts/PT-Serif.woff2) format('woff2'); 
+}
