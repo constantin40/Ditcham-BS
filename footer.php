@@ -1,4 +1,12 @@
 <footer>
+    <div class="row p-5">
+        <div class="col">
+        <h2 class="text-center">Contact Details & Useful Links</h2>
+        <hr class="beige">
+    </div>
+    <div class="row">
+
+</div>
 
 </footer>
 
@@ -16,4 +24,3 @@
 </body>
 
 </html>
-

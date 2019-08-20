@@ -6,17 +6,13 @@
 0.4 General classes
 1.0 HEADER
   1.1 NAVBAR 
-2.  HOME PAGE
-2.1 HERO IMAGE 
-2.2 SLIDER
-2 Home Section Welcome
+2. HOME PAGE
+  2 Home Hero Image 
+  2 Home Section Slider Top
+  2 Home Section Welcome
 */
 
 /* 0.0 Temporary stuff  */ 
-::-webkit-scrollbar {
-  display: none;
-  }
-
 
 /* 0.1 Typography */
 h2, h3, h4 {
@@ -25,20 +21,46 @@ h2, h3, h4 {
 p {
   font-family: "Heebo";
 }
+h4 {
+  font-weight: 400;
+}
 
 /* 0.2 Colors */
 :root {
   --col-green: #006545;
   --col-beige:  #E7BA6F;
+  --col-purple: #9a2967;
+  --col-gray: #4a4444;
+  --col-green-t: rgba(0, 101, 69, 0.5);
+  --col-beige-t:  rgba(231, 186, 111, 0.5);
+  --col-purple-t: rgba(154, 41, 103, 0.5);
+  --col-gray-t: rgba(74, 68, 68, 0.5);
+  --col-all: #444444;
+  --col-rss: #fd7e14;
+  --col-twitter: #1DA1F2;
+  --col-facebook: #1778F2;
+  --col-instagram: #d6249f;
+  --col-instagram-bg: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
+body {
+  background-color: white;
 }
 
 /* 0.4 General Classes  */
+/* 0.4 General Classes  */
+hr.beige {
+  border-top: 1px solid var(--col-beige);
+  width: 160px; 
+}
+hr.white {
+  border-top: 1px solid white;
+  width: 150px;
+}
 
 /* 1.1 NAVBAR */
 header {
   position: fixed;
   width: 100%;
-  // set animation
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
@@ -68,11 +90,10 @@ header.sticky {
 .nav-icon {
   width: 42px;
   height: 42px;
-    border: 1px solid var(--col-beige);
-    border-radius: 50%;
-    font-size: 12px;
-    display: flex;
-    
+  border: 1px solid var(--col-beige);
+  border-radius: 50%;
+  font-size: 12px;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -112,15 +133,20 @@ header.sticky {
 .nav-button {
   position: relative;
   z-index: 1111;
-  border: solid 1px #f8f8f8;
+  border: solid 1px var(--col-beige);
+  border-radius: 50%;
   height: 42px;
-  display: block;
-  width: 50px;
-  padding: 12px;
+  width: 42px;
+  display: inline-block;
+  padding: 11px;
+  white-space:  nowrap;
+}
+.nav-button .menu-title {
+  padding-left: 20px;
 }
 .nav-button #nav-icon3 {
-  width: 24px;
-  height: 22px;
+  width: 17px;
+  height: 17px;
   display: inline-block;
   position: relative; 
   transform: rotate(0deg); 
@@ -130,7 +156,7 @@ header.sticky {
 .nav-button #nav-icon3 span {
   display: block;
   position: absolute;
-  height: 3px;
+  height: 1px;
   width: 100%;
   background: #ffffff;
   border-radius: 9px;
@@ -182,35 +208,29 @@ header.sticky {
   background-repeat: no-repeat;
   background-position: center center;
 }
-.logo-subtitle img {
+#logo-subtitle img {
   opacity: 1;
+  transition: opacity 1s ease-in-out;
 }
-nav.sticky #logo-image {
+header.sticky #logo-image {
   background: url("../img/logo-small.png");
   width: 54px;
   height: 59px;
 }
-@media screen and (min-width: 992px) {
-  #logo-img {
-    width: 260px;
-    height: 120px;
-    position: relative;
-    bottom: -20px;
-  }
-  nav.sticky .logo-subtitle img {
-    height: 0;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-  }
+header.sticky #logo-subtitle {
+  opacity: 0;
 }
 /* 2. HOME PAGE */
 
-/* 2.1 Hero Image  */
+/* 2.1 Home Hero Image  */
 .home-section__hero-image {
   background-image: url("../img/home-top-hero.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between ;
 }
 .home__hero-fade {
   background: linear-gradient(
@@ -223,27 +243,389 @@ nav.sticky #logo-image {
 
 /* 2. Home Top Features */
 .home-section__categories-top {
-  position: relative;
-  margin-top: -120px;
+  z-index: 20;
+}
+.home-section__categories-top img:hover {
+  transform: scale(1.1);
+  transition: all .25s linear;
 }
 
-/* 2.2 SLIDER  */
+/* 2.2 Home Section Slider Top  */
 
+.curved-up,
+.curved-down {
+  position: relative;
+}
 
+.curved-up::before,
+.curved-up::after,
+.curved-down::after {
+	position: absolute;
+	content: '';
+	pointer-events: none;
+  background-color: white;
+  width: 100%;
+}
+
+.curved-down-i::after {
+	position: absolute;
+	content: '';
+	pointer-events: none;
+  background-color: rgba(255,255,255,0.5);
+  width: 100%;
+  height: 50px;
+
+}
+
+.curved-up::before {
+  height: 50px;
+  top: -50px;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+}
+.curved-down::after {
+  height: 50px;
+  top: 100%;
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+}
 .slider-home-top { 
   max-height: 420px;
   width: 100%;
-  box-sizing: border-box 
+  box-sizing: border-box ;
+  padding: 30px 120px;
 }
 .slider-home-top img {
   max-width: 100%;
   max-height: 100%;
 }
- /* 2 Home Section Welcome */
+.slider-home-top .shadow {
+  position: relative;
+  min-height: calc( 90vw / 4 * 0.75);
+  background-color: var(--col-green);
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.slider-home-top .shadow::after {
+  position: absolute;
+  content:"";
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  opacity:0;
+  background-color: var(--col-green);
+}
+.slider-home-top .shadow:hover::after {
+  opacity:0.5;
+}
+.slider-home-top h4 {
+  visibility: hidden;
+}
+.slider-home-top h3,
+.slider-home-top h4 {
+  z-index: 1;
+}
+.slider-home-top .shadow:hover h4 {
+  visibility: visible;
+}
+.home-top-admission {
+  background-image:
+  linear-gradient(0deg, rgba(0,0,0,0.75), transparent), 
+   url('../img/home-top-1-admissions.jpg');
+}
+.home-top-facilities {
+  background-image:  
+  linear-gradient(0deg, rgba(0,0,0,0.75), transparent), 
+  url('../img/home-top-2-facilities.jpg');
+}
+.home-top-vacancies {
+  background-image: 
+  linear-gradient(0deg, rgba(0,0,0,0.75), transparent), 
+  url('../img/home-top-3-vacancies.jpg');
+}
+.home-top-sports {
+  background-image: 
+  linear-gradient(0deg, rgba(0,0,0,0.75), transparent), 
+  url('../img/home-top-4-sports.jpg');
+} 
+.slider-home-top .slick-list.draggable {
+  z-index: 2;
+}
+.slider-home-top .slick-prev,
+.slider-home-top .slick-next {
+  height: auto;
+}
+.slider-home-top .slick-prev:before,
+.slider-home-top .slick-next:before {
+  color: #444444;
+  background: white;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
+  font-weight: 900;
+  font-family: "Font Awesome 5 Free";
+  padding-top: 35px;
+  padding-bottom: 35px;
+
+}
+.slider-home-top .slick-prev:before {
+  content: "\f060";
+  left: 115px;
+  padding-left: 20px;
+  padding-right: 50px;
+}
+
+.slider-home-top .slick-next:before {
+  content: "\f061";
+  left: -175px;
+  padding-left: 50px;
+  padding-right: 20px;
+} 
+
+
+/* 2 Home Section Welcome */
 
  .home-section__welcome {
-   background-color: gray;
-   background-image: url('../img/home-section-2-bg.jpg');
+   background-color: white;
+   background-image: linear-gradient(45deg, black, transparent), url('../img/home-section-2-bg.jpg');
    background-size: cover;
    background-position: center center;
+   min-height: 20vw;
+   padding: 7.5% 10vw;
+   border-bottom-left-radius: 50% 10%;
+   border-bottom-right-radius: 50% 10%;
+   
  }
+ .play-button {
+  color: var(--col-green);
+  background-color: rgba(255,255,255,0.5);
+  padding: 25px;
+  border-radius: 50%;
+  display: inline-block;
+ }
+.play-button .play {
+  display: inline-block;
+  content: '';
+  width: 30px;
+  height: 30px;
+  margin:  0 2px;
+  background-image: url('../img/play.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.play-button:hover .play {
+  background-image: url('../img/play-hover.png')
+}
+
+/* 2 Home Section Welcome  */
+
+/* 2 Home Section Hub  */
+.home-section__news-hub   {width: 100vw;overflow: hidden;}
+
+.home-section__news-hub .card {
+  margin-bottom: 2em;
+} 
+.hub-icon {
+  width: 33px;
+  height: 33px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  float: left;
+}
+.hub-icon i {
+  color: #afafaf;
+}
+.hub-icon:hover {
+  text-decoration: none;
+}
+.hub-icon--all,
+.hub-icon-h--all:hover {
+  border: 1px solid var(--col-all);
+}
+.hub-icon--all i,
+.hub-icon-h--all:hover i {
+    color: var(--col-all);
+}
+.hub-icon--rss,
+.hub-icon-h--rss:hover {
+    border: 1px solid var(--col-beige);
+}
+.hub-icon--rss i,
+.hub-icon-h--rss:hover i {
+    color: var(--col-beige);
+}
+.hub-icon--facebook,
+.hub-icon-h--facebook:hover {
+  border: 1px solid var(--col-facebook);
+}
+.hub-icon--facebook i,
+.hub-icon-h--facebook:hover i {
+    color: var(--col-facebook);
+}
+.hub-icon--twitter,
+.hub-icon-h--twitter:hover {
+    border: 1px solid var(--col-twitter);
+}
+.hub-icon--twitter i,
+.hub-icon-h--twitter:hover i {
+    color: var(--col-twitter);
+}
+.hub-icon--instagram,
+.hub-icon-h--instagram:hover {
+    border: 1px solid var(--col-instagram);
+}
+.hub-icon--instagram i,
+.hub-icon-h--instagram:hover i {
+  background: var(--col-instagram-bg);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.home-section__news-hub .card-footer {
+  width: 90%;
+  padding: 1em 0;
+  background-color: white;
+  margin: auto;
+}
+.card a {
+  cursor: pointer;
+}
+.card-twitter a {
+  color: var(--col-twitter) !important;
+}
+.card-facebook a {
+  color: var(--col-facebook) !important;
+}
+.home-section__news-hub .card-body {
+  min-height: 200px;
+}
+.card-footer-title {
+  line-height: 40px;
+  padding-left: 0.5em;
+}
+.card-footer-title--rss {
+  color: var(--col-beige);
+}
+.card-footer-title--twitter {
+  color: var(--col-twitter);
+}
+.card-footer-title--facebook {
+  color: var(--col-facebook) !important;
+}
+.card-footer-title--instagram {
+  color: var(--col-instagram);
+}
+ /* 2 Home Section Bottom Slider  */
+ .slider-home-bottom { 
+  max-height: 590px;
+  width: 100%;
+  box-sizing: border-box 
+}
+.slider-home-bottom img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.slider-home-bottom .shadow {
+  position: relative;
+  min-height: calc(100vw / 4 * 1.45);
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.slider-home-bottom .shadow::after {
+  position: absolute;
+  content:"";
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  opacity:0;
+}
+.slider-home-bottom .slick-list {
+  /* overflow-x: hidden; */
+  /* overflow-y: visible; */
+  overflow: visible;
+  /* overflow-x: hidden; */
+}
+
+.slider-home-bottom a {
+  color: white;
+}
+.slider-home-bottom h3,
+.slider-home-bottom h4 {
+  z-index: 1;
+}
+.home-bottom-hover {
+  opacity: 0;
+  height: 0;
+}
+.slider-home-bottom .shadow:hover .home-bottom-hover {
+  opacity: 1;
+  width: 80%;
+  height: auto;
+  z-index: 1;
+}
+.slider-home-bottom .shadow:hover {
+  transform: scale(1.1);
+  z-index: 2;
+  transition: all 0.25s linear;
+  justify-content: center;
+
+}
+.slider-home-bottom .shadow:hover::after {
+  opacity:0.5;
+}
+
+.home-bottom-david {
+  border-bottom: 10px solid var(--col-purple);
+
+}
+.home-bottom-dylan  {
+  border-bottom: 10px solid var(--col-green);
+}
+.home-bottom-emma {
+  border-bottom: 10px solid var(--col-beige);
+}
+.home-bottom-george {
+  border-bottom: 10px solid var(--col-gray);
+} 
+.home-bottom-david .shadow {
+  background-image: url('../img/home-life-1.jpg');
+}
+.home-bottom-dylan .shadow {
+  background-image: url('../img/home-life-2.jpg');
+}
+.home-bottom-emma .shadow {
+  background-image: url('../img/home-life-3.jpg');
+}
+.home-bottom-george .shadow {
+  background-image: url('../img/home-life-4.jpg');
+} 
+.home-bottom-david:hover .shadow {
+  background-image: linear-gradient(180deg, var(--col-purple-t), var(--col-gray-t)), url('../img/home-life-1.jpg');
+}
+.home-bottom-dylan:hover  .shadow {
+  background-image: linear-gradient(180deg, var(--col-green-t), var(--col-gray-t)), url('../img/home-life-2.jpg');
+}
+.home-bottom-emma:hover  .shadow {
+  background-image: linear-gradient(180deg, var(--col-beige-t), var(--col-gray-t)), url('../img/home-life-3.jpg');
+}
+.home-bottom-george:hover  .shadow {
+  background-image: linear-gradient(180deg, var(--col-gray-t), var(--col-gray-t)), url('../img/home-life-4.jpg');
+} 

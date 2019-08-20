@@ -5,7 +5,15 @@
         <div class="container-fluid d-flex justify-content-between p-0">
             <div class="row w-100">
                <div class="col menu-left-toggle align-self-start">
-                    <a class="nav-button "><span id="nav-icon3"><span></span><span></span><span></span><span></span></span></a>
+                    <a class="nav-button ">
+                        <span id="nav-icon3">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                        <span class="menu-title text-white">Menu</span>
+                    </a>
                 </div>
                 <div class="d-flex menu-right-buttons align-self-start">
                     <div class="row">
@@ -31,7 +39,7 @@
                 <div class="navbar-brand mx-auto">
                     <div id="logo">
                         <div id="logo-image" class="mx-auto"></div>
-                        <div class="logo-subtitle">
+                        <div id="logo-subtitle">
                             <img src="img/logo-subtitle.png" alt="Ditcham Park School - Where every child is known and valued">
                         </div>
                     </div>
