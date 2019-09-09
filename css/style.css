@@ -1,4 +1,4 @@
-`/* TOC 
+/* TOC 
 1. GENERAL
 1.1 Typography
 1.2 Colors
@@ -39,6 +39,16 @@ h4 {
 body.internal {
   padding-top: 4rem;
 }
+body { 
+  background-color: white;
+}
+header, footer, section, .secondary-wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+ footer, section, .secondary-wrapper {
+  background-color: white;
+}
 /* 1.2 Colors */
 :root {
   --col-green: #006545;
@@ -74,8 +84,7 @@ hr.beige {
 }
 a {
   cursor: pointer;
-}
-
+} 
 .drop-shadow {
    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
 }
@@ -95,25 +104,23 @@ header {
   width: 100%;
   transition: all 0.5s ease-in-out;
 }
-
 header.sticky {
   height: 60px;
   background: var(--col-green);
   text-align: left;
   transition: height 0.25s ease-in-out;
 }
-
-header.sticky .navbar {padding: 0rem 1rem;transition: all 0.5s ease-in-out;}
+header.sticky .navbar {
+  padding: 0rem 1rem;
+  transition: all 0.5s ease-in-out;
+}
 header.sticky .navbar-container {
   padding: 10px 0 0 5px;
   transition: all 0.5s ease-in-out;
-}
-header.sticky .navbar-row {
-}
+} 
 .navbar-toggler {
   margin-top: 15px;
 }
-
 .nav-icon {
   width: 42px;
   height: 42px;
@@ -480,13 +487,14 @@ body.internal.contact header {
   align-items: center;
   cursor: pointer;
   min-height: 250px;
+  transition: all 0.25s ease-in-out;
 }
 .slide-home-top {
   padding: 5px;
 }
 .slider-home-top .feature-wrap {
   transform: translateY(20%);
-  transition: all 0.25s linear;
+  transition: all 0.25s ease-in-out;
   z-index: 1;
 }
 .slider-home-top .feature:hover .feature-wrap {
@@ -849,7 +857,7 @@ transition: all 0.25s linear;
   position: relative;
   min-height: 465px;
   background-size: cover;
-  background-position: center center;
+  background-position: top center;
   background-image: url('../img/home-news-featured.jpg');
 }
 .featured-slide-content {
@@ -1008,14 +1016,9 @@ transition: all 0.25s linear;
 
 /* Home Section Life at Ditcham  */
 .home-section__life {padding-top: 49px;}
-.juniors 
-.home-section__life {/* margin-top: 0px; */}
-.juniors 
-.home-section__life h2 {font-family: "PT Serif";font-size: 35px;margin-top: -60px;}
-
+.juniors .home-section__life h2 {font-family: "PT Serif";font-size: 35px;margin-top: -60px;}
 .home-section__life__title {padding-top: 10px;padding-bottom: 30px;}
 .home-section__life__title h2 {font-family: "PT Serif";font-size: 38px;line-height: 37px;margin-bottom: 28px;}
-
 .home-section__life__title hr {
 }
  /* 3.6 Home Section Bottom Slider  */
@@ -1169,6 +1172,7 @@ padding-right: 50px;
   flex-direction: column;
   position: relative;
   top: 13px;
+  transition: all 0.25s ease-in-out;
 }
 .slider-home-bottom .home-bottom:hover .feature-container {
   transform: translateY(-25%);
@@ -1186,7 +1190,7 @@ padding-right: 50px;
 .slider-home-bottom .feature:hover {
   transform: scale(1.1);
   z-index: 2;
-  transition: all 0.25s linear; 
+  transition: all 0.25s ease-in-out;
 }
 .slider-home-bottom .feature:hover::after {
   opacity:0.5;
@@ -1318,11 +1322,6 @@ body.juniors
   margin: 0 auto;
   position: relative;
   left: -40px;
-}
-@media (max-width: 600px) {
-  .footer__contact {
-    left: 0;
-  }
 }
 .footer__contact .col-6, 
 .footer__contact .col-12 {
@@ -1701,21 +1700,6 @@ body.policies td {
     padding: 0px 25px 0 10px;
     font-size: 13px;
 }
-@media (max-width:  768px) {
-.col-share-page {
-   padding: 0;
- }
-.col-share-page .share-page {
-   padding: 0;
- }
-.col-share-page i {
-   padding: 0;
- }
-  .col.back {
-    padding: 0;
-  }
-}
-}
 .col-share-page i::before {
   color: #484647;
 }
@@ -1762,11 +1746,6 @@ body.policies td {
 .home-section__contact > .row {
   max-width: 55%;
   padding-top: 15px;
-}
-@media (max-width : 768px) {
-.home-section__contact > .row {
-  max-width: 90%;
-}
 }
 .home-section__contact h3 {
   font-family: "PT Serif";
@@ -1988,7 +1967,7 @@ body.policies td {
   top: -35px;
   z-index: 10;
   margin: 0 auto;
-  width: 79%;
+  width: 80%;
 }
 .secondary-sidebar  {
   position: absolute;
@@ -2015,6 +1994,7 @@ body.policies td {
   height: 44px;
   padding-left: 45px;
   padding-top: 0px;
+  line-height: 26px;
 }
 .nav-juniors ul ul li::before {
   content: "-";
@@ -2055,6 +2035,13 @@ hr.purple {
   font-size: 16px;
   padding-left: 28px;
   padding-top: 12px;
+}
+.nav-juniors .nav-has-children {
+  position: relative;
+}
+.nav-juniors .nav-has-children::before {
+  content: '';
+  position: absolute;
 }
 .nav-juniors .nav-link:hover {
   background-color: var(--col-purple);
@@ -2097,6 +2084,7 @@ hr.purple {
 .juniors-typography  h4 {
   font-family: "PT Serif";
   line-height: 1.40em;
+  color: #474343;
 }
 .juniors-typography  h1 {
   font-size: 35px;
@@ -2399,7 +2387,6 @@ left: -15px;
 padding-left: 50px;
 padding-right: 20px;
 }
-
 .slider-juniors-gallery .slick-next:before {
 content: "\f061";
 left: -50px;
@@ -2412,7 +2399,6 @@ padding-right: 50px;
 }
 
 /* 10. RESPONSIVE */
-
 .width-75 {
   width:100%;
 }
@@ -2422,17 +2408,25 @@ padding-right: 50px;
 .width-75-sm-down {
   width: 100%;
 }
+@media (max-width: 600px) {
+  .footer__contact {
+    left: 0;
+  }
+}
 @media (max-width:768px) {
-
   .home-section__hero-image {
     min-height: 75vh;
   }
   .home-section__categories-top--row-1 {
-    width: 100%;
-}
-.home-section__welcome--row {
-  padding-top: 3em;
-}
+      width: 100%;
+  }
+  .home-section__welcome--row {
+    padding-top: 3em;
+  }
+
+  .home-section__contact > .row {
+    max-width: 90%;
+  }
   .curved-up::before {
     border-top-left-radius: 50%;
     border-top-right-radius: 50%;
@@ -2442,6 +2436,18 @@ padding-right: 50px;
     border-bottom-right-radius: 100% 5%;
     background-position: -50% center;
   }
+  .col-share-page {
+    padding: 0;
+  }
+ .col-share-page .share-page {
+    padding: 0;
+  }
+ .col-share-page i {
+    padding: 0;
+  }
+   .col.back {
+     padding: 0;
+   }
   .footer--buttons {
     padding: 40px 0 0
   }
@@ -2451,7 +2457,11 @@ padding-right: 50px;
     text-align: center;
   }
 }
-
+@media  (max-width: 992px) {
+  .contact-icons {
+    flex-direction: column;
+  }
+}
 @media (max-width:1366px) {
   .footer__contact {
     width: 100%;
@@ -2479,12 +2489,7 @@ padding-right: 50px;
     margin-left: 0;
   }
 }
-@media screen and (max-width: 992px) {
-  .contact-icons {
-    flex-direction: column;
-  }
-}
-@media screen and (min-width: 992px) {
+@media (min-width: 992px) {
   .navbar {
     height: 130px;
   }
@@ -2505,12 +2510,16 @@ padding-right: 50px;
  }
 
 
-@media (min-width: 1600px) { 
-.curved-up::before {
-  top: -100px;
+@media (min-width: 1600px) {
+  .width-75 {
+  max-width: 75%;
+  }
+  
+.curved-up::before { 
+  top: -90px;
   }
  .home-section__contact.curved-up::before {
   top: -80px;
   }
 }
-.
+
