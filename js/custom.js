@@ -1,6 +1,6 @@
 // Sticky Header 
 $(window).scroll(function() {
-    if ($(this).scrollTop() > 250){  
+    if ($(this).scrollTop() > 50){  
         $('header').addClass("sticky");
     }
     else{
@@ -47,13 +47,26 @@ $('.slider-home-top').slick({
     {
        breakpoint: 768,
        settings: {
-          arrows: false,
           slidesToShow: 1,
           slidesToScroll: 1
        }
     }]
 });
 
+
+// Home Featured News Slider
+$('.featured-slider').slick({
+  autoplay: false,
+  infinite: true,
+  autoplaySpeed: 1500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: true,
+  dots: false,
+  fade: false,
+  centerMode: false,
+  cssEase: 'linear'
+});
 
 
   
@@ -65,33 +78,91 @@ $('.slider-home-bottom').slick({
   slidesToShow: 4,
   slidesToScroll: 1,
   arrows: true,
-  dots: false,
-  adaptiveHeight: true,
-  variableWidth: false,
-  centerMode: false,
-  cssEase: 'linear',
   responsive: [{
-      breakpoint: 900,
+      breakpoint: 1280,
       settings: {
         slidesToShow: 3,
         slidesToScroll: 1
       }
     },
     {
-      breakpoint: 600,
+      breakpoint: 960,
       settings: {
         slidesToShow: 2,
         slidesToScroll: 1
       }
     },
     {
-       breakpoint: 400,
+       breakpoint: 600,
        settings: {
-          arrows: false,
           slidesToShow: 1,
           slidesToScroll: 1
        }
     }]
 });
 
+
+// Home Bottom Slider
+$('.slider-juniors-gallery').slick({
+  autoplay: false,
+  infinite: true,
+  autoplaySpeed: 1500,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  arrows: true,
+  responsive: [
+    {
+      breakpoint: 960,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    },
+    {
+       breakpoint: 600,
+       settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+       }
+    }]
+});
+
+
+  
+// Home Bottom Slider
+$('.vacancies-slider').slick({
+  autoplay: false,
+  infinite: true,
+  autoplaySpeed: 1500,
+  slidesToShow: 5,
+  slidesToScroll: 1,
+  arrows: true,
+  responsive: [{
+    breakpoint: 1366,
+    settings: {
+      slidesToShow: 4,
+      slidesToScroll: 1
+    }
+  },{
+    breakpoint: 1280,
+    settings: {
+      slidesToShow: 3,
+      slidesToScroll: 1
+    }
+  },
+    {
+      breakpoint: 960,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    },
+    {
+       breakpoint: 600,
+       settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+       }
+    }]
+});
 

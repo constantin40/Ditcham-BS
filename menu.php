@@ -2,8 +2,8 @@
     <!-- FULL SCREEN NAV -->
 
     <nav class="navbar box-shadow">
-        <div class="container-fluid d-flex justify-content-between p-0">
-            <div class="row w-100">
+        <div class="container-fluid navbar-container d-flex justify-content-between">
+            <div class="navbar-row row w-100">
                <div class="col menu-left-toggle align-self-start">
                     <a class="nav-button ">
                         <span id="nav-icon3">
@@ -18,48 +18,61 @@
                 <div class="d-flex menu-right-buttons align-self-start">
                     <div class="row">
                         <div class="col">
-                            <span class="nav-icon">
-                                <i class="text-white fas fa-link"></i>
-                            </span>
+                            <div class="dropdown dropdown-right dropdown-nav-quicklinks">
+                                <a class="nav-icon dropdown-toggle" data-toggle="dropdown" id="nav-quicklinks" role="menu" aria-haspopup="true" aria-expanded="false">
+                                    <i class=" fas fa-link"></i>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="nav-quicklinks">
+                                    <ul>
+                                        <li><a href="#">Juniors</a></li>
+                                        <li><a href="#">GSCE Information</a></li>
+                                        <li><a href="#">GSCE Results</a></li>
+                                        <li><a href="#">Show My Homework</a></li>
+                                        <li><a href="#">Parent's Portal</a></li>
+                                        <li><a href="#">Staff Portal</a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                         <div class="col">
-                            <span class="nav-icon">
-                                <i class="text-white far fa-envelope "></i>
-                            </span>
+                            <a class="nav-icon">
+                                <i class=" far fa-envelope "></i>
+                            </a>
                         </div>
                         <div class="col">
-                        <span class="nav-icon">
-                                <i class="text-white fas fa-search"></i>
-                            </span>
+                            <a class="nav-icon">
+                                <i class=" fas fa-search"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row w-100 mt-n5">
+            <div class="row w-100 mt-n5 mx-auto">
                 <div class="navbar-brand mx-auto">
-                    <div id="logo">
+                    <div class="d-sm-none pb-5"></div>
+                    <a id="logo" href="index.php" title="Home">
                         <div id="logo-image" class="mx-auto"></div>
                         <div id="logo-subtitle">
-                            <img src="img/logo-subtitle.png" alt="Ditcham Park School - Where every child is known and valued">
+                            <div class="img"></div>
+                            <!-- <img src="img/logo-subtitle.png" alt="Ditcham Park School - Where every child is known and valued"> -->
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div> 
         </div>
+      
     </nav>
     <!--navbar end-->
 
     <div class="fixed-top main-menu">
         <div class="flex-center p-5">
             <ul class="nav flex-column">
-                <li class="nav-item delay-1"><a class="nav-link" href="#">HOME</a></li>
-                <li class="nav-item delay-2"><a class="nav-link" href="#">ABOUT US</a></li>
-                <li class="nav-item delay-3"><a class="nav-link" href="#">PRODUCTS</a></li>
-                <li class="nav-item delay-4"><a class="nav-link" href="#">APPLICATIONS</a></li>
-                <li class="nav-item delay-5"><a class="nav-link" href="#">FACILITIES</a></li>
-                <li class="nav-item delay-6"><a class="nav-link" href="#">QUALITY</a></li>
-                <li class="nav-item delay-7"><a class="nav-link" href="#">CAREER</a></li>
-                <li class="nav-item delay-8"><a class="nav-link" href="#">CONTACT US</a></li>
+                <li><a class="nav-link" href="index.php">HOME</a></li>
+                <li><a class="nav-link" href="vacancies.php">VACANCIES</a></li>
+                <li><a class="nav-link" href="vacancy.php">VACANCY (SINGLE)</a></li>
+                <li><a class="nav-link" href="policies.php">POLICIES</a></li>
+                <li><a class="nav-link" href="juniors.php">JUNIORS</a></li>
+                <li><a class="nav-link" href="contact.php">CONTACT</a></li>
             </ul>
         </div>
     </div>

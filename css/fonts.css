@@ -13,3 +13,9 @@
   font-weight: 400; 
   src: local('PT Serif'), local('PTSerif-Regular'), url(../fonts/PT-Serif.woff2) format('woff2'); 
 }
+@font-face {
+  font-family: 'PT Serif';
+  font-style: italic;
+  font-weight: 400; 
+  src: local('PT Serif Italic'), local('PTSerif-Italic'), url(../fonts/PT-Serif-Italic.woff2) format('woff2'); 
+}
